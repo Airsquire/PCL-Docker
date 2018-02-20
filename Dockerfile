@@ -61,12 +61,13 @@ RUN cd /opt/eigen/build && make install
 # Instal VTK
 RUN cd /opt && git clone git://vtk.org/VTK.git VTK
 RUN cd /opt/VTK && mkdir VTK-build
-RUN /opt/VTK/VTK-build && cmake -DCMAKE_BUILD_TYPE:STRING=Release ..
+RUN cd /opt/VTK/VTK-build && cmake -DCMAKE_BUILD_TYPE:STRING=Release ..
 
 RUN cd /opt && git clone https://github.com/PointCloudLibrary/pcl.git pcl
 RUN cd /opt/pcl && git checkout tags/pcl-1.8.1
 RUN mkdir -p /opt/pcl/build
 RUN cd /opt/pcl/build && cmake ..
-RUN cd /opt/pcl/build && make -j 4
+RUN cd /opt/pcl/build && make -j 32
 RUN cd /opt/pcl/build && make install
+RUN cd /opt/pcl/build && make test
 RUN cd /opt/pcl/build && make clean
