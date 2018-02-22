@@ -3,7 +3,7 @@
 # Author: Airsquire You Yue
 # Pull base image.
 FROM ubuntu:16.04
-FROM nvidia/cuda:9.1-devel
+FROM nvidia/cuda:8.0-devel
 FROM youyue/boost-docker:1.58.0
 FROM youyue/eigen-docker:3.2
 FROM youyue/vtk-docker:8.0
@@ -20,6 +20,8 @@ RUN apt-get install -y  \
   lynx \
   libqhull* \
   pkg-config \
+  libxmu-dev \
+  libxi-dev \
   python2.7-dev \
   --no-install-recommends --fix-missing
 RUN apt-get install -y  \
@@ -34,7 +36,7 @@ RUN apt-get autoremove
 RUN cd /opt && git clone https://github.com/PointCloudLibrary/pcl.git pcl
 RUN cd /opt/pcl && git checkout tags/pcl-1.8.1
 RUN mkdir -p /opt/pcl/build
-RUN cd /opt/pcl/build && cmake -D WITH_CUDA=true BUILD_GPU=true ..
+RUN cd /opt/pcl/build && cmake -D WITH_CUDA=true -D BUILD_GPU=true -D BUILD_visualization=true -D BUILD_CUDA=true -D VTK_DIR=/opt/VTK/build -D BUILD_2d=true ..
 RUN cd /opt/pcl/build && make -j 32
 RUN cd /opt/pcl/build && make install
 RUN cd /opt/pcl/build && make test
