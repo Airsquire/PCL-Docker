@@ -19,7 +19,8 @@ RUN apt-get install -y \
   python-dev \
   autotools-dev \
   libicu-dev \
-  libbz2-dev
+  libbz2-dev \
+  libboost-all-dev 
 
 RUN apt-get install -y  \
   mc \
@@ -41,13 +42,13 @@ RUN apt-get install -y  \
 
 RUN apt-get autoremove
 
-# Install Boost
+# # Install Boost
 
-RUN wget -O boost_1_58_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz/download
-RUN tar xzvf boost_1_58_0.tar.gz && rm boost_1_58_0.tar.gz
-RUN cd boost_1_58_0 && ./bootstrap.sh --prefix=/usr/local
-RUN cd boost_1_58_0 && ./b2 
-RUN cd boost_1_58_0 ./b2 install
+# RUN wget -O boost_1_58_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.gz/download
+# RUN tar xzvf boost_1_58_0.tar.gz && rm boost_1_58_0.tar.gz
+# RUN cd boost_1_58_0 && ./bootstrap.sh --prefix=/usr/local
+# RUN cd boost_1_58_0 && ./b2 
+# RUN cd boost_1_58_0 ./b2 install
 
 # Install Eigen
 RUN cd /opt && hg clone -r 3.2 https://bitbucket.org/eigen/eigen eigen
