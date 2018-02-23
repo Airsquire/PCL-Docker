@@ -7,7 +7,8 @@ This repositry hosts the docker file for PCL-Docker and its neccessary component
 - Ubuntu:16.04 -- https://hub.docker.com/r/_/ubuntu/
 - boost_1_58_0 -- https://hub.docker.com/r/youyue/boost-docker/
 - Eigen 3.2 -- https://hub.docker.com/r/youyue/eigen-docker/
-- VTK with OpenGL2
+- VTK with OpenGL
+- CUDA 8.0
 - PCL 1.8.1 
 
 ## Reason for not using CUDA 9.0+
