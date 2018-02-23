@@ -13,4 +13,4 @@ This repositry hosts the docker file for PCL-Docker and its neccessary component
 
 ## Reason for not using CUDA 9.0+
 
- The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated in CUDA 9.0
+ The 'compute_20', 'sm_20', and 'sm_21' architectures are deprecated in CUDA 9.0. But PCL 1.8.1 is still using these architectures
