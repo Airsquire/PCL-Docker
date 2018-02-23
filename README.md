@@ -1,4 +1,4 @@
-# PCL-Docker
+# PCL docker with GPU feature enabled
 
 This repositry hosts the docker file for PCL-Docker and its neccessary components from Airsquire. See the detailed link below.
 
