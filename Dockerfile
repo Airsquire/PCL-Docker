@@ -6,7 +6,7 @@ FROM nvidia/cuda:8.0-devel
 
 # Install neccessary tools
 RUN apt-get update
-RUN apt-get install -y 
+RUN apt-get install -y \
   software-properties-common \ 
   ca-certificates \
   wget
