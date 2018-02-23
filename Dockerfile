@@ -61,7 +61,5 @@ RUN cd /opt && git clone https://github.com/PointCloudLibrary/pcl.git pcl
 RUN cd /opt/pcl && git checkout tags/pcl-1.8.1
 RUN mkdir -p /opt/pcl/build
 RUN cd /opt/pcl/build && cmake -D WITH_CUDA=true -D BUILD_GPU=true -D BUILD_visualization=true -D BUILD_CUDA=true -D VTK_DIR=/opt/VTK/build -D BUILD_2d=true ..
-RUN cd /opt/pcl/build && make -j 32
-RUN cd /opt/pcl/build && make install
-RUN cd /opt/pcl/build && make test
+RUN cd /opt/pcl/build && make -j 32 && make install
 RUN cd /opt/pcl/build && make clean
