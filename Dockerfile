@@ -57,8 +57,8 @@ RUN cd /opt/VTK/build && make -j 32 && make install
 
 
 # Install PCL
-RUN cd /opt && git clone https://github.com/PointCloudLibrary/pcl.git pcl
-RUN cd /opt/pcl && git checkout tags/pcl-1.8.1
+RUN cd /opt && git clone https://github.com/Airsquire/pcl pcl
+RUN cd /opt/pcl && git checkout master
 RUN mkdir -p /opt/pcl/build
 RUN cd /opt/pcl/build && cmake -D WITH_CUDA=true -D BUILD_GPU=true -D BUILD_visualization=true -D BUILD_CUDA=true -D VTK_DIR=/opt/VTK/build -D BUILD_2d=true ..
 RUN cd /opt/pcl/build && make -j 32 && make install
