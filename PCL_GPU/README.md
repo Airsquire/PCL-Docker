@@ -9,7 +9,7 @@ This repositry hosts the docker file for PCL-Docker and its neccessary component
 - Eigen 3.2 -- https://github.com/Airsquire/PCL-Docker/blob/master/Eigen-Docker/Dockerfile
 - VTK with OpenGL https://github.com/Airsquire/PCL-Docker/blob/master/VTK-Docker/Dockerfile
 - CUDA 8.0
-- PCL 1.8.1 
+- PCL from Airsquire repo -- https://github.com/Airsquire/pcl
 
 ## Reason for not using CUDA 9.0+
 
